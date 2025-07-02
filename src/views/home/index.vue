@@ -36,7 +36,7 @@ const pathTo = (path) => {
     #9ea0b0,
     #32beeb
   );
-  animation: bgmove 5s infinite linear;
+  animation: bgmove 40s infinite linear;
   background-size: 200%;
 }
 @keyframes bgmove {
