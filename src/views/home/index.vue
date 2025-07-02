@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <div style="margin-bottom: 20px;">
-      <h1>something</h1>
-    </div>
+    <h1>something</h1>
     <el-button @click="pathTo('/collection')">collection</el-button>
   </div>
 </template>
@@ -27,6 +25,7 @@ const pathTo = (path) => {
   height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 30px;
