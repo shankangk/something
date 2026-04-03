@@ -55,14 +55,14 @@ onMounted(() => {
     // (deep slate base, dusty rose, soft teal, periwinkle blue)
     colors: ['#3A404F', '#9E6E85', '#5C8A8A', '#6B769E', '#826F85', '#5B8A9E'],
     seed: 1200,
-    loop: true
+    loop: true,
   });
 
   // Override the default animation loop to make it extremely smooth and slow
   // The default uses "this.frame / 50", we'll change it to "this.frame / 200"
   if (bgInstance) {
     const originalAnimate = bgInstance._animate.bind(bgInstance);
-    bgInstance._animate = function() {
+    bgInstance._animate = function () {
       if (this.planeShader && this.planeShader.uniforms.uTime) {
         this.planeShader.uniforms.uTime.value = this.frame / 200;
       } else {
@@ -154,7 +154,9 @@ onUnmounted(() => {
     letter-spacing: 2px;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition:
+      color 0.3s ease,
+      text-shadow 0.3s ease;
     position: relative;
 
     &::after {
@@ -216,6 +218,7 @@ onUnmounted(() => {
   z-index: 5;
   flex: 1;
   display: flex;
+  flex-direction: column;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -289,7 +292,9 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 
   &:hover {
@@ -314,8 +319,15 @@ onUnmounted(() => {
 }
 
 @keyframes line-pulse {
-  0%, 100% { opacity: 1; transform: scaleY(1); }
-  50% { opacity: 0.3; transform: scaleY(0.6); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scaleY(0.6);
+  }
 }
 
 @keyframes indicator-reveal {
